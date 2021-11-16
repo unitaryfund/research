@@ -1,4 +1,4 @@
 # Unitary Fund Research
 A repository for archived research code
 
-- [[arXiv:2108.02237] Noise-extended probabilistic error cancellation (NEPEC)](/nepec/)
+- [Noise-extended probabilistic error cancellation (NEPEC)](/nepec/). Phys. Rev. A 104, 052607 (2021), arXiv:2108.02237.

@@ -1,6 +1,9 @@
 ## Noise-extended probabilistic error cancellation (NEPEC)
 
 ### [arXiv:2108.02237](https://arxiv.org/abs/2108.02237)
+Journal: [Phys. Rev. A 104, 052607 (2021)](https://link.aps.org/doi/10.1103/PhysRevA.104.052607)
+
+DOI: https://doi.org/10.1103/PhysRevA.104.052607
 
 ### Abstract
 
