@@ -9,6 +9,10 @@ We propose a general framework for quantum error mitigation that combines and ge
 1. [Exact NEPEC representations vs exact PEC representations](https://github.com/unitaryfund/research/blob/master/nepec/exact-nepec-representations/exact_nepec_representations.ipynb)
 2. [Noise-agnostic PEC via gate extrapolation](https://github.com/unitaryfund/research/blob/master/nepec/noise-agnostic-pec/noise_agnostic_pec.ipynb)
 3. [Probabilistic error reduction (PER) and virtual ZNE](https://github.com/unitaryfund/research/blob/master/nepec/probabilistic-error-reduction-and-virtual-zne/probabilistic_error_reduction.ipynb)
+
+### Additional notebooks unrelated to the results shown in the paper but related to NEPEC.
+4. [ZNE, PEC and NEPEC with Mitiq and Qiskit](./mitiq-qiskit-pec-nepec/mitiq-qiskit-zne-pec-nepec.ipynb)
+
 ### How to use
 The code in this folder is organized in different Jupyter notebooks that can be used to reproduce the main results of the paper.
 
