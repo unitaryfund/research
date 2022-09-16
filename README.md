@@ -10,7 +10,7 @@ This repository also holds notebooks for tutorials used in presentations and wor
 - [The Weisfeiler-Lehman Test with Pulser](./ieee-quantum-week/neutral-atom-tutorial/weisfeiler-lehman-test-tutorial/weisfeiler-lehman-test-tutorial.ipynb)
 
 The `neutral-atom-tutorial` directory contains also tutorials from Pulser documentation:
-- [The Control-Z Gate Sequence with Pulser](./ieee-quantum-week/neutral-atom-tutorial/weisfeiler-lehman-test-tutorial/control-z-gate-sequence/Control-Z%20Gate%20Sequence.ipynb)
+- [The Control-Z Gate Sequence with Pulser](./ieee-quantum-week/neutral-atom-tutorial/control-z-gate-sequence/Control-Z%20Gate%20Sequence.ipynb)
 - [Preparing a state with antiferromagnetic order in the Ising model](./ieee-quantum-week/neutral-atom-tutorial/antiferromagnetic-state-preparation/Preparing%20state%20with%20antiferromagnetic%20order%20in%20the%20Ising%20model.ipynb)
 - [Bayesian Optimisation for antiferromagnetic state preparation](./ieee-quantum-week/neutral-atom-tutorial/antiferromagnetic-state-preparation/Bayesian%20Optimisation%20for%20antiferromagnetic%20state%20preparation.ipynb)
 
