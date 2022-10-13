@@ -2,6 +2,7 @@
 A repository for archived research code and tutorials on open-source quantum software.
 
 - [Noise-extended probabilistic error cancellation (NEPEC)](/nepec/). Phys. Rev. A 104, 052607 (2021), arXiv:2108.02237.
+- [Testing platform-independent quantum error mitigation on noisy quantum computers](/qem-on-hardware/). arXiv:X.
 
 ## Tutorials
 This repository also holds notebooks for tutorials used in presentations and workshops.
