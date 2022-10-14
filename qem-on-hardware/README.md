@@ -1,6 +1,6 @@
 ## Testing platform-independent quantum error mitigation on noisy quantum computers
 
-### [arXiv:X](https://arxiv.org/abs/X)
+### [arXiv:2210.07194](https://arxiv.org/abs/2210.07194)
 
 ### Abstract
 
