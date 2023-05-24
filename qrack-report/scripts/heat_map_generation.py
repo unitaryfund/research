@@ -30,7 +30,7 @@ def bench(trial, width, depth, sdrp, out):
     circ = QrackCircuit()
           
     # Load circuit definition from file
-    circ.in_from_file("../heat_map_circuits/trial_" + str(trial) + "_w" + str(width) + "_d" + str(depth))
+    circ.in_from_file("heat_map_circuits/trial_" + str(trial) + "_w" + str(width) + "_d" + str(depth))
     
     sim = QrackSimulator()
     if sdrp > 0:
