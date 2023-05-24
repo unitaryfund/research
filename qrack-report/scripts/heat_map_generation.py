@@ -7,7 +7,7 @@ from pyqrack import QrackSimulator, QrackCircuit
 def create_csv(filename):
     file_exists = os.path.isfile(filename)
     csvfile = open(filename, 'a')
-   
+
     headers = ['trial', 'width', 'depth', 'sdrp', 'time', 'fidelity']
     writer = csv.DictWriter(csvfile, delimiter=',', lineterminator='\n',fieldnames=headers)
 
@@ -28,20 +28,20 @@ def write_csv(writer, data):
 def bench(trial, width, depth, sdrp, out):
     sdrp = sdrp * 0.0125
     circ = QrackCircuit()
-          
+
     # Load circuit definition from file
     circ.in_from_file("heat_map_circuits/trial_" + str(trial) + "_w" + str(width) + "_d" + str(depth))
-    
-    sim = QrackSimulator()
+
+    sim = QrackSimulator(width)
     if sdrp > 0:
         sim.set_sdrp(sdrp)
-    
+
     start = time.perf_counter()
     circ.run(sim)
     end = time.perf_counter()
-    
+
     writer = create_csv(out)
-    
+
     write_csv(writer, { 'trial': trial, 'width': width, 'depth': depth, 'sdrp': sdrp, 'time': (end - start), 'fidelity': sim.get_unitary_fidelity() })
 
 if __name__ == '__main__':
