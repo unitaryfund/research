@@ -1,5 +1,5 @@
 for t in {1..10}; do
-    for wroot in {6..8}; do
+    for wroot in {2..8}; do
         w=$(( $wroot * $wroot ))
         for ((d=1; d<=$w; ++d)); do
             for s in {0..80}; do
