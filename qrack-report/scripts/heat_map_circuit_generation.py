@@ -78,6 +78,12 @@ def generate_circuits(width, depth):
 
                     b1 = row * row_len + col
                     b2 = temp_row * row_len + temp_col
+                    
+                    if (b1 >= width) or (b2 >= width):
+                        continue
+
+                    choice = random.choice(two_qubit_gates)
+                    choice(circ, b1, b2)
 
             # Fully-connected couplers:
             ###########################
