@@ -2,6 +2,7 @@ import click
 import csv
 import os
 import time
+from pathlib import Path
 from pyqrack import QrackSimulator, QrackCircuit
 
 def create_csv(filename):
@@ -29,8 +30,13 @@ def bench(trial, width, depth, sdrp, out):
     sdrp = sdrp * 0.0125
     circ = QrackCircuit()
 
+    path = "heat_map_circuits/trial_" + str(int(trial)) + "_w" + str(int(width)) + "_d" + str(int(depth))
+    my_file = Path(path)
+    if not my_file.is_file():
+        return
+
     # Load circuit definition from file
-    circ.in_from_file("heat_map_circuits/trial_" + str(trial) + "_w" + str(width) + "_d" + str(depth))
+    circ.in_from_file(path)
 
     sim = QrackSimulator(width)
     if sdrp > 0:
