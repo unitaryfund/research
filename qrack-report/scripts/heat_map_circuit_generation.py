@@ -5,7 +5,7 @@ import random
 from pyqrack import QrackCircuit
 
 samples = 10
-widths = [4, 9, 16, 25, 36, 49, 64]
+widths = list(range(2, 28))
 
 def mcx(circ, c, q):
     circ.ucmtrx([c], [0, 1, 1, 0], q, 1)
@@ -44,11 +44,9 @@ def rand_u3(circ, q):
 def generate_circuits(width, depth):
     gateSequence = [ 0, 3, 2, 1, 2, 1, 0, 3 ]
     two_qubit_gates = mcx, mcy, mcz, macx, macy, macz
-    
-    colLen = math.floor(math.sqrt(width))
-    while ((math.floor(width / colLen) * colLen) != width):
-        colLen = colLen - 1
-    rowLen = width // colLen
+
+    # Nearest-neighbor couplers:
+    row_len = math.ceil(math.sqrt(width))
 
     time_results = []
     fidelity_results = []
@@ -62,29 +60,37 @@ def generate_circuits(width, depth):
             # Single bit gates
             for j in range(width):
                 rand_u3(circ, j)
-
-            gate = gateSequence[0]
-            gateSequence.pop(0)
+            
+            # Nearest-neighbor couplers:
+            ############################
+            gate = gateSequence.pop(0)
             gateSequence.append(gate)
 
-            for row in range(1, rowLen, 2):
-                for col in range(colLen):
-                    tempRow = row
-                    tempCol = col
-
-                    tempRow = tempRow + (1 if (gate & 2) else -1);
-                    if colLen != 1:
-                        tempCol = tempCol + (1 if (gate & 1) else 0)
-
-                    if (tempRow < 0) or (tempCol < 0) or (tempRow >= rowLen) or (tempCol >= colLen):
-                        continue
+            for row in range(1, row_len, 2):
+                for col in range(row_len):
+                    temp_row = row
+                    temp_col = col
+                    temp_row = temp_row + (1 if (gate & 2) else -1);
+                    temp_col = temp_col + (1 if (gate & 1) else 0)
                     
-                    b1 = row * colLen + col
-                    b2 = tempRow * colLen + tempCol
+                    if (temp_row < 0) or (temp_col < 0) or (temp_row >= row_len) or (temp_col >= row_len):
+                        continue
 
-                    # Two bit gates
-                    choice = random.choice(two_qubit_gates)
-                    choice(circ, b1, b2)
+                    b1 = row * row_len + col
+                    b2 = temp_row * row_len + temp_col
+
+            # Fully-connected couplers:
+            ###########################
+            # unused_bits = list(range(width))
+            # while len(unused_bits) > 1:
+            #     b1 = random.choice(unused_bits)
+            #     unused_bits.remove(b1)
+            #     b2 = random.choice(unused_bits)
+            #     unused_bits.remove(b2)
+            #
+            #     # Two bit gates
+            #     choice = random.choice(two_qubit_gates)
+            #     choice(circ, b1, b2)
 
             circ.out_to_file("heat_map_circuits/trial_" + str(t) + "_w" + str(width) + "_d" + str(i + 1))
 
