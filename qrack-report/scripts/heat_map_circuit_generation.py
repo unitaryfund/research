@@ -5,7 +5,7 @@ import random
 from pyqrack import QrackCircuit
 
 samples = 10
-widths = list(range(2, 28))
+widths = list(range(36, 64))
 
 def mcx(circ, c, q):
     circ.ucmtrx([c], [0, 1, 1, 0], q, 1)
