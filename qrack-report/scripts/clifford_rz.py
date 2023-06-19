@@ -117,7 +117,7 @@ def random_circuit(width, circ):
 
     single_bit_gates = { 0: (z_to_x, z_to_y), 1: (x_to_y, x_to_z), 2: (y_to_z, y_to_x) } 
     two_bit_gates = swap, pswap, mswap, nswap, iswap, iiswap, cx, cy, cz, acx, acy, acz
-    
+
     # Nearest-neighbor couplers:
     gateSequence = [ 0, 3, 2, 1, 2, 1, 0, 3 ]
     row_len = math.ceil(math.sqrt(width))
@@ -125,7 +125,7 @@ def random_circuit(width, circ):
     # Don't repeat bases:
     bases = [0] * width
     directions = [0] * width
-    
+
     for i in range(3 * width):
         # Single bit gates
         for j in range(width):
@@ -133,7 +133,7 @@ def random_circuit(width, circ):
             if i % 3 == 0:
                 bases[j] = random.randint(0, 2)
                 directions[j] = random.randint(0, 1)
-            
+
             # Sequential basis switch
             gate = single_bit_gates[bases[j]][directions[j]]
             g_count = gate(circ, j)
@@ -149,7 +149,7 @@ def random_circuit(width, circ):
                 bases[j] += 1
                 if bases[j] > 2:
                     bases[j] -= 3
-                
+
             # Rotate around local Z axis
             rnd = random.randint(0, 3)
             if rnd == 0:
@@ -162,13 +162,13 @@ def random_circuit(width, circ):
             if rnd < 3:
                 gate_count += 1
                 bit_depths[j] += 1
-            
+
             if (t_count < max_magic) and (width * width * random.random() / max_magic) < 1:
                 circ.u(j, 0, random.uniform(0, 4 * math.pi), 0)
                 gate_count += 1
                 bit_depths[j] += 1
                 t_count += 1
-            
+
         # Nearest-neighbor couplers:
         ############################
         # gate = gateSequence.pop(0)
@@ -221,8 +221,11 @@ def main():
     random_circuit(width, qsim)
     qsim.out_to_file('qrack_circuit.chp')
     circ = QrackSimulator.file_to_qiskit_circuit('qrack_circuit.chp')
-    
-    tc.set_dtype("complex64")
+
+    tc.set_backend("tensorflow")
+    tc.set_contractor("auto")
+    tc.set_dtype("complex128")
+
     net = tc.Circuit.from_qiskit(circ)
     for b in range(width, circ.width()):
         net.post_select(b, keep=0)
