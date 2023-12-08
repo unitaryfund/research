@@ -1,6 +1,6 @@
 ## Counting collisions in random circuit sampling for benchmarking quantum computers
 
-### [arXiv:xxxx.xxxx](https://arxiv.org/abs/xxxx.xxxx)
+### [arXiv:2312.04222](https://arxiv.org/abs/2312.04222)
 
 ### Abstract
 
