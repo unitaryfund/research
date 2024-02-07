@@ -5,6 +5,7 @@ A repository for archived research code and tutorials on open-source quantum sof
 - [Testing platform-independent quantum error mitigation on noisy quantum computers](/qem-on-hardware/). arXiv:2210.07194.
 - [Zero noise extrapolation on logical qubits by scaling the error correction code distance](/ds_zne/). arXiv:2304.14985.
 - [Counting collisions in random circuit sampling for benchmarking quantum computers](/collisions/). arXiv:2312.04222.
+- [Quantum error mitigation by layerwise Richardson extrapolation](/lre/). arXiv:2402.04000.
 
 ## Tutorials
 This repository also holds notebooks for tutorials used in presentations and workshops.
