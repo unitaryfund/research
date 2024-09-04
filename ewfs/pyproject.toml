@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "ewfs"
+version = "0.1.0"
+description = ""
+authors = ["vrusso <vincentrusso1@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+qiskit = "^1.2.0"
+pylatexenc = "^2.10"
+seaborn = "^0.13.2"
+qiskit-aer = "^0.14.2"
+jupyter = "^1.0.0"
+networkx = "^3.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
