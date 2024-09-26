@@ -1,6 +1,6 @@
 # Extended Wigner's Friend Scenario (ewfs)
 
-Supplemental code for [arXiv:X](XXX).
+Supplemental code for [arXiv:2409.15302](https://arxiv.org/abs/2409.15302).
 
 ## Installation
 
@@ -12,7 +12,9 @@ poetry install
 
 ## Usage
 
-First, launch the virtual environment shell via poetry:
+In order to run the notebooks, you will need to unzip the `paper_data.zip` file.
+
+Launch the virtual environment shell via poetry:
 
 ```
 poetry shell
