@@ -26,3 +26,10 @@ Next, launch a local Jupyter notebook server.
 ```
 jupyter notebook
 ```
+
+There are two Jupyter notebooks:
+
+- `demo.ipynb`: Specifies a EWFS circuit and runs on an IBM simulator (or hardware) device.
+
+- `plots.ipynb`: Uses the data generated on simulators and hardware to reproduce plots from the paper.
+

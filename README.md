@@ -6,7 +6,7 @@ A repository for archived research code and tutorials on open-source quantum sof
 - [Zero noise extrapolation on logical qubits by scaling the error correction code distance](/ds_zne/). arXiv:2304.14985.
 - [Counting collisions in random circuit sampling for benchmarking quantum computers](/collisions/). arXiv:2312.04222.
 - [Quantum error mitigation by layerwise Richardson extrapolation](/lre/). arXiv:2402.04000.
-- [Towards violations of Local Friendliness with quantum computers](/ewfs/). arXiv:X.
+- [Towards violations of Local Friendliness with quantum computers](/ewfs/). arXiv:2409.15302.
 
 ## Tutorials
 This repository also holds notebooks for tutorials used in presentations and workshops.
